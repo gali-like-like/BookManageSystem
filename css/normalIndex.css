@@ -1,0 +1,141 @@
+#app {
+    width:100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: aquamarine;
+    width:100%;
+    margin:0px;
+}
+
+#info {
+    background-color:lightcoral;
+    padding:15px;
+}
+
+p {
+    width:100%;
+    background-color:lightpink;
+    margin-right:10%;
+    padding:16px;
+    font-size:20px;
+    font-family:"微软雅黑";
+    font-style:oblique;
+}
+
+ul#menuId {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+  
+ul#menuId li {
+    float: left;
+}
+  
+ul#menuId li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 26px;
+    text-decoration: none;
+}
+  
+ul#menuId li a:hover {
+    background-color: #111;
+}
+
+#lname,#iName {
+    margin-top:30px;
+}
+
+label {
+    display: inline-block;
+    font-size:20px;
+    font-family:"微软雅黑";
+    font-style:normal;
+    /* padding:16px; */
+    width:20%;
+    margin-left:10%;
+    margin-bottom:20px;
+    text-align:left;
+    text-indent:40%;
+}
+
+input {
+    font-size:18px;
+    font-family:"微软雅黑";
+    font-style:normal;
+    background-color:transparent;
+}
+
+input[type="text"],input[type="password"] {
+    border:0px none;
+    border-bottom:2px solid gold;
+    width:60%;
+    margin:0px;
+}
+
+
+input[type="submit"] {
+    margin-left:10%;
+    margin-right:10%;
+    width:80%;
+    font-size:24px;
+    font-style:oblique;
+    border:2px groove gray;
+    padding:5px;
+    border-radius:20px;
+}
+
+input[type="submit"]:active {
+    border:2px groove rgb(185, 161, 161);
+    color:greenyellow;
+}
+
+#update {
+    width:inherit;
+    background-color:darkcyan;
+}
+
+input[type="password"]:focus ,input[type="text"]:focus
+{
+    border-bottom:2px solid greenyellow;
+    outline-style:none;
+    outline-width:0px;
+}
+
+#update input {
+    margin-bottom:20px;
+}
+
+#decGender {
+    width:inherit;
+    position:relative;
+}
+
+label#lMan {
+    margin:0px;
+    padding:0px;
+    position:absolute;
+    left:40%;
+}
+
+label#lWoman {
+    margin:0px;
+    padding:0px;
+    position:absolute;
+    left:60%;
+}
+
+input[type="radio"] {
+    margin:0px;
+    padding:0px;
+    display:none;
+}

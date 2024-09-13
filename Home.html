@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>天元图书管理系统Web版v1.0</title>
+		
+		<style>
+			*{
+				margin:0;
+				padding:0;
+			}
+			
+			html,body,.home{
+				height:100%;
+				width:100%;
+			}
+			.top{
+				height:2em;
+				width:100%;
+				background-color:black;
+				
+			}
+			.homeTitle{
+				color:white;
+				line-height:2em;
+			}
+			.topRight{
+				float:right;
+			}
+			.accountName{
+				margin-right:10px;
+				color:white;
+			}
+			
+			.exit a{
+				margin-right:15px;
+				color:gray;
+				line-height:2em;
+				text-decoration:none;
+			}
+			.exit a:hover{
+				color:white;
+			}
+			.userId{
+				color:white;
+				margin-right:68px;
+			}
+			.left{
+				float:left;
+				height:calc(100% - 2em);
+				width:212px;
+				background-color:gray;
+			}
+			.right{
+				float:right;
+				height:calc(100% - 2em);
+				width:calc(100% - 227px);
+				background-color:rgb(167,202,221);
+			}
+			
+			
+			
+/* 			.bookSys,.lendSys,.userSys{
+				font-size:1.6em;
+				line-height:1.8em;
+				background-color:grb(57,61,73);
+				border:1px solid white;
+				cursor:pointer;
+			} */
+			
+			.list ul li,.list li{
+					font-size:1.6em;
+					line-height:1.8em;
+					background-color:grb(57,61,73);
+					border:1px solid white;
+					cursor:pointer;
+			}
+			
+			
+			.bookSys:hover,.lendSys:hover,.userSys:hover{
+				color:white;
+			}
+			
+			.triangleBook,.triangleLend,.triangleUser{
+				float:right;
+				margin-right:15px;
+				color:white;
+				cursor:pointer;
+			}
+			
+			.bookSysItem{
+				display:none;
+				background-color:black;
+				color:rgb(191,192,194);
+			}
+			.left{
+				padding-left:15px;
+			}
+			.list li{
+				margin-left:15px;
+			}
+			.bookSysItem{
+				margin-left:-32px;
+			}
+			.bookSysItem li{
+				margin-left:47px;
+			}
+			
+			ul{
+				list-style:none;
+			}
+			.bookSysSee,.bookSysAdd,.bookSysUpdate,.bookSysDelete{
+				font-size:1.6em;
+				line-height:1.8em;
+				background-color:grb(57,61,73);
+				border:1px solid white;
+				cursor:pointer;
+			}
+			.bookSysSee:hover,.bookSysAdd:hover,.bookSysUpdate:hover,.bookSysDelete:hover{
+				color:gray;
+			}
+			
+			
+			.lendSysItem{
+				display:none;
+				background-color:black;
+				color:rgb(191,192,194);
+			}
+			.lendSysItem{
+				margin-left:-32px;
+			}
+			.lendSysItem li{
+				margin-left:47px;
+			}
+			.lendSysLend:hover,.lendSysReturn:hover,.lendSysWater:hover{
+				color:gray;
+			}
+
+			.userSysItem{
+				display:none;
+				background-color:black;
+				color:rgb(191,192,194);
+			}
+			.userSysItem{
+				margin-left:-32px;
+			}
+			.userSysItem li{
+				margin-left:47px;
+			}
+			
+			.userSysSee:hover,.userSysupdate:hover,.userSysDelete:hover,.userSysAdd:hover{
+				color:gray;
+			}
+			
+		/* 	以下为右侧窗口中的置换内容 */
+			/* 以下内容为查询图书的内容 */
+			.bookSysSeeImpl{
+				margin:0;
+				padding:0;
+				/* 以下的记得注释回来,需要用 */
+				display:none;
+				
+			}
+			.bookSysSeeImpl .bookSysSeeTop{
+				width:100%;
+				height:70px;
+				background-color:gray;
+			}
+			.bookSysSeeImpl .bookSysSeeTop .bookSysTitleSee{
+				margin-left:25px;
+				font-size:3em;
+				color:white;
+			}
+			
+			/* 查询图书的表格 */
+			
+			.bookSysSeeIndex{
+				background-color:rgb(242,242,242);
+				width:1000px;
+				margin:0 auto;
+			}
+			
+			.bookSysSeeIndex .bookSysSeeTable{
+				/* background-color:rgb(242,242,242); */
+				width:100%;
+				border-collapse:collapse;
+				
+			}
+			.bookSysSeeIndex .bookSysSeeTable th,td{
+				border:1px solid #ddd;
+				padding:8px;
+				text-align:center;
+			}
+			th{
+				background-color:#f2f2f2;
+			}
+			.bookDelete{
+				width:40px;
+				height:24px;
+				margin-right:5px;
+				color:white;
+				background-color:red;
+			}
+			.bookEdit{
+				width:40px;
+				height:24px;
+				margin-left:5px;
+				color:white;
+				background-color:rgb(0,150,136);
+			}
+			.bookDelete:hover,.bookEdit:hover{
+				color:black;
+				cursor:pointer;
+			}
+			.pagination{
+				font-size:20px;
+				display:flex;
+				justify-content:space-between;
+				align-items:center;
+				margin-top:20px;
+				padding:10px;
+				width:65%;
+				
+			}
+			.goto_page{
+				width:100px;
+			}
+			.pageFont{
+				font-size:20px;
+			}
+			
+			
+		</style>
+		
+	</head>
+	<body>
+		<div class="home">
+			<div class="top">
+				<span class="homeTitle">天元图书管理系统Web版v1.0</span>
+				<div class="topRight">
+					<span class="accountName">您好,</span><span class="userId">qian#</span>
+					<span class="exit"><a href="#">退出</a></span>
+				</div>
+				
+			</div>
+			
+			
+			
+			<div class="left">
+				
+				<ul class="list">
+					<li id="bookSys" class="bookSys">图书管理<span class="triangleBook">▼</span>
+					
+					</li>	
+							<ul id ="bookSysItem" class="bookSysItem">
+							<li id ="bookSysSee" class="bookSysSee">查询图书</li>
+							<li class="bookSysAdd">添加图书</li>
+							<li class="bookSysUpdate">修改图书</li>
+							<li class="bookSysDelete">删除图书</li>
+						</ul>
+						
+						
+					<li class="lendSys">借阅管理<span class="triangleLend">▼</span>
+					
+					</li>
+					
+						<ul id ="lendSysItem" class="lendSysItem">
+							<li class="lendSysLend">图书借阅</li>
+							<li class="lendSysReturn">图书归还</li>
+							<li class="lendSysWater">借阅流水</li>
+						</ul>
+					
+					
+					<li class="userSys">用户管理<span class="triangleUser">▼</span>
+					
+					</li>
+						
+						<ul id ="userSysItem" class="userSysItem">
+							<li class="userSysSee">查询用户</li>
+							<li class="userSysupdate">修改用户</li>
+							<li class="userSysDelete">删除用户</li>
+							<li class="userSysAdd">增添用户</li>
+						</ul>
+				
+				
+				</ul>
+				
+			</div>
+			
+			
+			<div class="right">
+				
+				<div id="bookSysSeeImpl" class="bookSysSeeImpl">
+					
+					<div class="bookSysSeeTop">
+						<p class="bookSysTitleSee">查询图书</p>
+					</div>
+					
+					<div class="bookSysSeeIndex">
+						
+						<table class="bookSysSeeTable">
+							<tr>
+								<th>图书编号</th>
+								<th>图书名称</th>
+								<th>图书作者</th>
+								<th>图书价格</th>
+								<th>图书数量</th>
+								<th>图书类型</th>
+								<td>操作</td>
+							</tr>
+							
+							<tbody>
+								<!-- <tr>
+									<td>3</td>
+									<td>张三自传</td>
+									<td>张三</td>
+									<td>200</td>
+									<td>5</td>
+									<td>小说</td>
+									<td><button class="bookDelete" ">删除</button><button class="bookEdit">修改</button></td>
+								</tr>
+								
+								<tr>
+									<td>3</td>
+									<td>张三自传</td>
+									<td>张三</td>
+									<td>200</td>
+									<td>5</td>
+									<td>小说</td>
+									<td><button class="bookDelete">删除</button><button class="bookEdit">修改</button></td>
+								</tr> -->
+							</tbody>
+						</table>
+						<div class="pagination">
+							<button class="page_btn_prev" onclick="beforePage()"><span class="pageFont">上一页</span></button>
+							<span class="current_page"></span>
+							<input type="text" class="goto_page pageFont" placeholder="到第 x 页"  class="pageFont" pattern="\d+" onchange="enterCompletable()"/>
+							<button class="page_btn_next" onclick="afterPage()"><span class="pageFont">下一页</span></button>
+							<span class="total_pages" class="pageFont"></span>
+						</div>
+						
+					</div>
+					
+				</div>
+				
+				
+			</div>
+		</div>
+		
+		<!-- //#bookSysSeeImpl > div.bookSysSeeIndex > table > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(1) -->
+		
+		
+		
+	</body>
+<script type="module" src="./js/removeBook.js"></script>
+<script src="./js/pagationn.js"></script>
+<script src="./js/axios.js"></script>
+</html>

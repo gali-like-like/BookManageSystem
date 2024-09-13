@@ -1,0 +1,117 @@
+div#app {
+    width:inherit;
+    margin-bottom:20px;
+    margin-top:20px;
+    margin-left:10%;
+    margin-right:10%;
+}
+
+h1 {
+    text-align:center;
+    padding-top:20px;
+    font-size:30px;
+    font-weight:bold;
+    color:rgb(14, 5, 6);
+}
+
+* {
+    box-sizing: border-box;
+    font-size:18px;
+    font-weight:normal;
+    font-family:"微软雅黑";
+    background-color:darkseagreen
+}
+
+input[type="text"] {
+    margin-bottom:15px;
+    border-style:none;
+    border-bottom:1px solid gray;
+    background-color:transparent;
+    width:100%;
+}
+
+input:focus {
+    outline-style:none;
+    outline-width:0px;
+    caret-color:darkturquoise;
+    border-bottom-color:aqua;
+}
+
+label {
+    position:absolute;
+}
+
+#labelGender {
+    position:absolute;
+    left:0px;
+}
+
+#man {
+    left:66%;
+    margin-left:10px;
+}
+
+#woman {
+    left:33%;
+    margin-left:10px;
+}
+
+#labelWoman {
+    left:33%;
+}
+
+#labelMan {
+    left:66%;
+}
+
+
+
+input:-webkit-autofill {
+   background-color:transparent;
+} 
+
+input[type="radio"] {
+    position:absolute;
+    width:10%;
+    padding:4px;
+}
+
+#genders {
+    width:inherit;
+    position:relative;
+    margin-bottom:10px;
+}
+
+#genders input {
+    font-size:20px;
+}
+
+#btns button{
+    width:48%;
+    position: absolute;
+    border:1px solid gray;
+    font-size:22px;
+    color:black;
+    border-radius:10px;
+    border:2px solid transparent;
+    background-color:brown;
+}
+
+#btns {
+    position:relative;
+    width:100%;
+}
+
+#btnLogin {
+    left:52%;
+}
+
+#btnRegedit {
+    right:52%;
+}
+
+a {
+    background-color:transparent;
+    text-decoration: none;
+    color:black;
+}

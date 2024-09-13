@@ -1,0 +1,99 @@
+div#app {
+    margin-top:20px;
+    width:100%; 
+    line-height:20px;
+}
+
+* {
+    box-sizing:border-box;
+    font-size:18px;
+    font-weight:normal;
+    font-family:"微软雅黑";
+    width:100%;
+    background-color:lightpink;
+}
+
+h1 {
+    text-align:center;
+    width:100%;
+    padding-top:20px;
+    font-size:30px;
+    font-weight:bold;
+    color:rgb(14, 5, 6);
+}
+
+input {
+    width:80%;
+    border-style:none;
+    border-bottom:1px solid black;
+    text-align:left;
+    margin-right:10%;
+    margin-left:10%;
+    background-color:transparent;
+}
+
+input:focus {
+    outline-width:0px;
+    outline-style:none;
+    caret-color:deepskyblue;
+    border-bottom:1px solid skyblue;
+}
+
+label {
+    display:block;
+    border:2px solid red;
+    text-align:left;
+    text-indent:10%;
+}
+
+body {
+    width:100%;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+#btns button {
+    width:38%;
+    display:inline-block;
+    box-sizing: border-box;
+    background-color:brown;
+    border-radius:10px;
+    font-size:22px;
+}
+
+#btns {
+    width:100%;
+    position:relative;
+    background-color:antiquewhite;
+}
+
+#btnLogin {
+    position:absolute;
+    left:10%;
+}
+
+#btnRegedit {
+    position:absolute;
+    right:10%;
+}
+
+input#password {
+    margin-bottom:20px;
+}
+
+p {
+    margin-left:10%;
+    margin-right:10%;
+    width:80%;
+    text-align:left;
+    color:hsl(200, 100%, 60%);
+}
+
+a {
+    width:inherit;
+    text-decoration:none;
+    color:black;
+    background-color:transparent;
+}
